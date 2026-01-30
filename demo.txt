@@ -5,3 +5,4 @@ Welcome to github
 Welcome to github
 stash example
 stash example
+changes to check POLL SCM
