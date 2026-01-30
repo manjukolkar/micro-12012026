@@ -1,35 +1,38 @@
 pipeline {
-    agent any // Run on any available executor
+    agent {
+        label 'slave'
+    }
 
-    stages {
-        stage('hostname') {
-            steps {
+    stages{
+        stage('hostname'){
+            steps{
                 sh 'hostname'
             }
         }
-        stage('server date') {
-            steps {
+
+        stage('server date'){
+            steps{
                 sh 'date'
-                
             }
         }
-        stage('CPU Details') {
-            steps {
+
+        stage('cpu details'){
+            steps{
                 sh 'lscpu'
             }
+        }
 
-            stage('Memory usage'){
+        stage('memory usage'){
             steps{
                 sh 'free -h'
             }
-            }
-            stage('disk usage'){
+        }
+
+        stage('disk usage details'){
             steps{
                 sh 'df -kh'
             }
-            
         }
     }
+    
 }
-}
-
