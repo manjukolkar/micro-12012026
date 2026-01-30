@@ -1,0 +1,35 @@
+pipeline {
+    agent any // Run on any available executor
+
+    stages {
+        stage('hostname') {
+            steps {
+                sh 'hostname'
+            }
+        }
+        stage('server date') {
+            steps {
+                sh 'date'
+                
+            }
+        }
+        stage('CPU Details') {
+            steps {
+                sh 'lscpu'
+            }
+
+            stage('Memory usage'){
+            steps{
+                sh 'free -h'
+            }
+            }
+            stage('disk usage'){
+            steps{
+                sh 'df -kh'
+            }
+            
+        }
+    }
+}
+}
+
