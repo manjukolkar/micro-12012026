@@ -1,2 +1,1 @@
-merge example
-Changes made and file saved in local by stash command
+dd
